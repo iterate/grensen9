@@ -1,6 +1,6 @@
-# FROKOST
+# G9
 
-Ukas viktigste måltid
+Ukas viktigste sted
 
 ## how to develop
 
@@ -11,7 +11,7 @@ Ukas viktigste måltid
 ## using docker
 
 ```bash
-docker build --tag=frokost .
-docker run --name=frokost -p 80:80 frokost
+docker build --tag=grensen9 .
+docker run --name=grensen9 -p 80:80 grensen9
 #> http://localhost:80
 ```
