@@ -1,0 +1,3 @@
+name = "grensen9"
+port = 5000
+readiness_path = "/"
