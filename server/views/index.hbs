@@ -2,8 +2,8 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta charset=" utf-8">
   <title>G9-KART</title>
   <style>
     h1 {
@@ -22,12 +22,48 @@
       justify-content: center;
     }
   </style>
+  <link href='//fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
   <h1>G9-kart, femte etasje</h1>
-  <div id="map-wrap">
-    <pre>
+  <svg version="1.1" id="track" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 520 420" enable-background="new 0 0 520 420" xml:space="preserve">
+    <path id="circuit" fill="none" stroke="#000000" stroke-width="7" d="
+        M118.23171,291.40244C173.71952,291.40244 319.45123,190.18292 361.5244,121.89024C403.59757,53.59756 376.7683,34.08536 354.20732,40.79268C331.64635,47.5 336.5244,82.2561 337.13415,106.03658C337.74391,129.81707 356.03659,193.23172 349.93903,229.81708C343.84147,266.40244 325.54879,294.45122 270.06098,293.84146C214.57318,293.23171 168.84147,243.84146 162.74391,194.45122C156.64634,145.06097 149.32927,120.06097 164.57317,63.96341C179.81707,7.86585 270.06099,13.96342 290.79269,66.40244C311.52439,118.84146 273.71952,151.15854 231.03659,162.13415C188.35366,173.10976 150.54879,131.64633 97.50001,146.89024C44.45122,162.13415 31.03659,188.96341 34.08537,234.69512C37.13415,280.42683 62.74391,291.40244 118.23171,291.40244z" />
+  </svg>
+
+  <div class="ui">
+    <a class="start" href="#">Start Racing</a>
+    <div class="ui-item lifes">
+      <ul>
+        <li><i class="fa fa-heart"></i></li>
+        <li><i class="fa fa-heart"></i></li>
+        <li><i class="fa fa-heart"></i></li>
+        <li><i class="fa fa-heart"></i></li>
+        <li><i class="fa fa-heart"></i></li>
+      </ul>
+    </div>
+
+    <div class="ui-item score">
+      SCORE: <span class="points">0</span>
+    </div>
+
+    <div class="ui-item best-score">
+      BEST: <span class="best-points">0</span>
+    </div>
+  </div>
+
+  <div id="track_container">
+    <div id="track_car">
+      <div class="image"></div>
+    </div>
+    <canvas id="track_canvas" width="520" height="420"></canvas>
+    <div id="map-wrap">
+      <pre>
 +----------+-------------------------------+-----------+---------------+
 |          |                               |           |               |
 |          |                               |           /  SUPER MARIO  |
@@ -60,7 +96,16 @@
                                                        |   |
                                                        +---+
     </pre>
+    </div>
   </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/paper.js/0.10.3/paper-full.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+  <script src="./racer.js"></script>
+  <script>
+    Racer.Game.init();
+  </script>
+
 </body>
 
 </html>
